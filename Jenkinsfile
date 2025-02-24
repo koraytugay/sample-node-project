@@ -34,7 +34,7 @@ pipeline {
                       enable: true,
                       algorithm: 'NBA',
                       sourceFiles: [
-                          '**/*.js'
+                          [pattern: '**/*.js']
                       ]
                   ]
               ]
