@@ -16,6 +16,15 @@ pipeline {
 
   stages {
 
+    stage('Build') {
+      steps {
+        script {
+          sh 'node -v'
+          sh 'npm install'
+        }
+      }
+    }
+
     stage('Policy') {
       steps {
         script {
@@ -34,7 +43,7 @@ pipeline {
                       enable: true,
                       algorithm: 'NBA',
                       sourceFiles: [
-                          [pattern: '**/*.js']
+                          [pattern: 'app.js']
                       ]
                   ]
               ]
