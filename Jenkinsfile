@@ -42,6 +42,9 @@ pipeline {
                   jsAnalysis: [
                       enable: true,
                       algorithm: 'NBA',
+                      projectDirectory: '.',
+                      packageJsonFile: 'package.json',
+                      nodeModulesDirectory: 'node_modules',
                       sourceFiles: [
                           [pattern: 'app.js']
                       ]
