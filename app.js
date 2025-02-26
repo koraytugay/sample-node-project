@@ -5,7 +5,10 @@ GEREKLİ PAKETLER YÜKLENİYOR...
 */
 var http = require('http');
 var express = require('express');
-var purify = require('dompurify');
+
+require('dompurify', function(DOMPurify) {
+	DOMPurify.sanitize('<b>hello there</b>', {});
+});
 
 var app = express();
 
@@ -17,9 +20,7 @@ app.use(express.static(__dirname + '/app/public')); // KULLANICILAR TARAFINDAN E
 require('./app/routes')(app); // ROUTE DOSYASI ÇAĞIRILDI
 
 /*
-
-HTTP SERVER OLUŞTURULDU
-
+HTTP SERVER
 */
 http.createServer(app).listen(app.get('port'), function(){
 	console.log('Sistem ' + app.get('port') + ' Portu Üzerinde Çalışıyor.');
