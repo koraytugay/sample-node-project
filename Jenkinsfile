@@ -41,6 +41,7 @@ pipeline {
                   logLevel: 'DEBUG',
                   jsAnalysis: [
                       enable: true,
+                      force: true,
                       algorithm: 'NBA',
                       projectDirectory: '.',                // relative to workspace
                       packageJsonFile: 'package.json',      // relative to workspace
