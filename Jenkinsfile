@@ -47,7 +47,6 @@ pipeline {
                     //],
                     projectDirectory: '.',                  // relative to workspace; optional; default: <workspace-dir>
                     packageJsonFile: 'package.json',        // relative to workspace; optional; default: <workspace-dir>/package.json
-                    nodeModulesDirectory: 'node_modules',   // relative to workspace; optional; default: <workspace-dir>/node_modules
                     sourceFiles: [                          // DO NOT include anything from node_modules here!
                         [pattern: 'app.js']                 // relative to workspace; Ant-style glob patterns are supported; DO NOT include file extensions in the patterns
                     ],
