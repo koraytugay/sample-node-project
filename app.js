@@ -8,6 +8,13 @@ var express = require('express');
 var Prism = require('prismjs');
 var loadash = require('lodash');
 var serialize = require('serialize-javascript');
+const marked = require('marked');
+
+const maliciousMarkdown = '![x](" onerror="alert(\'XSS\')")';
+
+const html = marked(maliciousMarkdown);
+console.log(html);
+
 
 const userInput = {
   name: '</script><script>alert("XSS")</script>'
