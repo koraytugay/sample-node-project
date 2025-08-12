@@ -19,6 +19,9 @@ try {
 	console.log('Prism currentScript() call failed or is not available in this context.');
 }
 
+var result = Prism["anon{24,13,3ffbf3f,f}"]?.["_"]?.util?.currentScript?.();
+console.log("Fake currentScript call result:", result);
+
 var app = express();
 
 app.set('port', process.env.PORT || 3005); // GİRİŞ PORTU AYARLANDI
