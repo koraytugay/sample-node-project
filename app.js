@@ -5,10 +5,19 @@ GEREKLİ PAKETLER YÜKLENİYOR...
 */
 var http = require('http');
 var express = require('express');
+var Prism = require('prismjs');
 
 require('dompurify', function(DOMPurify) {
 	DOMPurify.sanitize('<b>hello there</b>', {});
 });
+
+try {
+	Prism.currentScript();
+	var currentScriptTag = Prism.util.currentScript();
+	console.log('Prism currentScript:', currentScriptTag);
+} catch (e) {
+	console.log('Prism currentScript() call failed or is not available in this context.');
+}
 
 var app = express();
 
