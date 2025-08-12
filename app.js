@@ -7,6 +7,18 @@ var http = require('http');
 var express = require('express');
 var Prism = require('prismjs');
 var loadash = require('lodash');
+var serialize = require('serialize-javascript');
+
+const userInput = {
+  name: '</script><script>alert("XSS")</script>'
+};
+
+// This output is often embedded in HTML directly
+const serialized = serialize(userInput);
+
+console.log(serialized);
+// Output: {"name":"</script><script>alert(\"XSS\")</script>"}
+
 
 // Attacker-controlled input
 const maliciousPayload = JSON.parse('{ "__proto__": { "admin": true } }');
