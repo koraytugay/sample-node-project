@@ -15,6 +15,9 @@ const maliciousMarkdown = '![x](" onerror="alert(\'XSS\')")';
 const html = marked(maliciousMarkdown);
 console.log(html);
 
+marked.token();
+marked.resolveUrl();
+
 
 const userInput = {
   name: '</script><script>alert("XSS")</script>'
